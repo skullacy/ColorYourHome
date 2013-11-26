@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="앱정보"
+                android:textColor="#7c766f"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/listview_background"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                android:padding="1dp" >
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_gap"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="Color Your Home" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/listview_arrow" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="공지사항" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/listview_arrow" />
+                </FrameLayout>
+            </LinearLayout>
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="푸쉬알림"
+                android:textColor="#7c766f"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/listview_background"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                android:padding="1dp" >
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_gap"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="내 게시물 새로운 댓글" />
+                    
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_gap"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="내 게시물 예뻐요" />
+
+                </FrameLayout>
+                
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_gap"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="내 게시물 담기" />
+
+                </FrameLayout>
+                
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="관련 게시물 댓글" />
+
+                </FrameLayout>
+            </LinearLayout>
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="계정관리"
+                android:textColor="#7c766f"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/listview_background"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                android:padding="1dp" >
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_gap"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="페이스북" />
+
+                </FrameLayout>
+                
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_gap"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="정보수정" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/listview_arrow" />
+                </FrameLayout>
+                	
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_gap"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="비밀번호변경" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/listview_arrow" />
+                </FrameLayout>
+                
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_gap"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="로그아웃" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/listview_arrow" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="회원탈퇴" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/listview_arrow" />
+                </FrameLayout>
+            </LinearLayout>
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="약관"
+                android:textColor="#7c766f"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/listview_background"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                android:padding="1dp" >
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/listview_gap"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="이용약관" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/listview_arrow" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text="등등" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/listview_arrow" />
+                </FrameLayout>
+            </LinearLayout>
+            
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
