@@ -24,11 +24,12 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.skray.skraylibs.view.SkrayListView;
 
 public class PostsFragment extends SherlockListFragment implements
 		OnItemClickListener, OnPostLoadListener, OnPullEventListener<ListView> {
 
-	private PullToRefreshListView listView;
+	private SkrayListView listView;
 	private ImagePostAdapter adapter;
 	private int page;
 
@@ -38,7 +39,7 @@ public class PostsFragment extends SherlockListFragment implements
 
 		View view = inflater.inflate(R.layout.post_fragment, container, false);
 
-		listView = (PullToRefreshListView) view.findViewById(R.id.pull_to_refresh_listview);
+		listView = (SkrayListView) view.findViewById(R.id.pull_to_refresh_listview);
 		listView.getLoadingLayoutProxy().setLoadingDrawable(getResources().getDrawable(R.drawable.indicator_arrow));
 		listView.setOnItemClickListener(this);
 		listView.setOnRefreshListener(new OnRefreshListener<ListView>() {
