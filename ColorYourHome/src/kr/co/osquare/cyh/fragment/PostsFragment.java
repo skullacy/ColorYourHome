@@ -13,17 +13,22 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.capricorn.ArcMenu;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.skray.skraylibs.view.SkrayArcMenu;
 import com.skray.skraylibs.view.SkrayListView;
 
 public class PostsFragment extends SherlockListFragment implements
@@ -32,12 +37,20 @@ public class PostsFragment extends SherlockListFragment implements
 	private SkrayListView listView;
 	private ImagePostAdapter adapter;
 	private int page;
+	
+	private static final int[] ITEM_DRAWABLES = {
+		R.drawable.align_button, R.drawable.align_button, R.drawable.align_button};
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
 		View view = inflater.inflate(R.layout.post_fragment, container, false);
+		
+		SkrayArcMenu arcMenu = (SkrayArcMenu) view.findViewById(R.id.arc_menu);
+		
+		initArcMenu(arcMenu, ITEM_DRAWABLES);
+		
 
 		listView = (SkrayListView) view.findViewById(R.id.pull_to_refresh_listview);
 		listView.getLoadingLayoutProxy().setLoadingDrawable(getResources().getDrawable(R.drawable.indicator_arrow));
@@ -58,6 +71,25 @@ public class PostsFragment extends SherlockListFragment implements
 		mPost.postLoadAsync();
 
 		return view;
+	}
+
+	private void initArcMenu(final SkrayArcMenu arcMenu, final int[] itemDrawables) {
+		// TODO Auto-generated method stub
+		final int itemCount = itemDrawables.length;
+		for (int i = 0; i < itemCount; i++) {
+			final ImageView item = new ImageView(getActivity());
+			item.setImageResource(itemDrawables[i]);
+			
+			final int position = i;
+			arcMenu.addItem(item, new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(getActivity(), "position:" + position, Toast.LENGTH_SHORT).show();
+					arcMenu.changePlanetImage(itemDrawables[position]);
+				}
+			});
+		}
 	}
 
 	private class GetDataTask extends AsyncTask<Void, Void, String[]> {
