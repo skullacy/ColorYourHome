@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -113,7 +114,9 @@ public class PostsFragment extends SherlockListFragment implements
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View v, int position, long id) {
+		Log.e("onItemClick", "ItemClick");
 		MenuObject o = (MenuObject) arg0.getItemAtPosition(position);
+		
 
 	}
 
