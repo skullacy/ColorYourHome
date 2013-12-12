@@ -21,18 +21,16 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.SherlockListFragment;
-import com.capricorn.ArcMenu;
+import com.actionbarsherlock.app.SherlockFragment;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnPullEventListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.skray.skraylibs.view.SkrayArcMenu;
 import com.skray.skraylibs.view.SkrayListView;
 
-public class PostsFragment extends SherlockListFragment implements
+public class PostsFragment extends SherlockFragment implements
 		OnItemClickListener, OnPostLoadListener, OnPullEventListener<ListView> {
 
 	private SkrayListView listView;
@@ -55,7 +53,7 @@ public class PostsFragment extends SherlockListFragment implements
 
 		listView = (SkrayListView) view.findViewById(R.id.pull_to_refresh_listview);
 		listView.getLoadingLayoutProxy().setLoadingDrawable(getResources().getDrawable(R.drawable.indicator_arrow));
-		listView.setOnItemClickListener(this);
+		listView.setOnItemClickListener(PostsFragment.this);
 		listView.setOnRefreshListener(new OnRefreshListener<ListView>() {
 			@Override
 			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
@@ -73,6 +71,8 @@ public class PostsFragment extends SherlockListFragment implements
 
 		return view;
 	}
+	
+	
 
 	private void initArcMenu(final SkrayArcMenu arcMenu, final int[] itemDrawables) {
 		// TODO Auto-generated method stub
@@ -115,7 +115,7 @@ public class PostsFragment extends SherlockListFragment implements
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View v, int position, long id) {
 		Log.e("onItemClick", "ItemClick");
-		MenuObject o = (MenuObject) arg0.getItemAtPosition(position);
+//		MenuObject o = (MenuObject) arg0.getItemAtPosition(position);
 		
 
 	}
