@@ -67,6 +67,8 @@ public class PostsFragment extends SherlockFragment implements
 
 		page = 1;
 		adapter = new ImagePostAdapter(getActivity());
+		
+		listView.setListViewAnimation(false);
 		listView.setAdapter(adapter);
 
 		PostManager mPost = PostManager.getInstance();

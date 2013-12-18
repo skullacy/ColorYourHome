@@ -16,10 +16,18 @@ public class BaseActivity extends SlidingFragmentActivity {
 
 	private int mTitleRes;
 	protected ListFragment mFrag;
+	private Boolean isMainFrame = true;
 
 	public BaseActivity(int titleRes) {
 		mTitleRes = titleRes;
 	} 
+	
+	public BaseActivity(int titleRes, Boolean isMainFrame) {
+		mTitleRes = titleRes;
+		this.isMainFrame = isMainFrame;
+	}
+	
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -41,14 +49,24 @@ public class BaseActivity extends SlidingFragmentActivity {
 		
 
 		// customize the SlidingMenu
-		SlidingMenu sm = getSlidingMenu();
-		sm.setShadowWidthRes(R.dimen.shadow_width);
-		sm.setShadowDrawable(R.drawable.shadow);
-		sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-		sm.setFadeDegree(0.35f);
-		sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		if(isMainFrame)
+		{
+			SlidingMenu sm = getSlidingMenu();
+			sm.setShadowWidthRes(R.dimen.shadow_width);
+			sm.setShadowDrawable(R.drawable.shadow);
+			sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+			sm.setFadeDegree(0.35f);
+			sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		}
+		
+		
 		getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
-		getSupportActionBar().setIcon(getResources().getDrawable(R.drawable.actionbar_button_menu));
+		
+		if(isMainFrame)
+			getSupportActionBar().setIcon(getResources().getDrawable(R.drawable.actionbar_button_menu));
+		else
+			getSupportActionBar().setIcon(getResources().getDrawable(R.drawable.actionbar_button_back));
+		
 		getSupportActionBar().setHomeButtonEnabled(true);
 		
 		
@@ -67,13 +85,11 @@ public class BaseActivity extends SlidingFragmentActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        
-        //�׼ǹ� write �޴�
-        MenuItem item2 = menu.add(0, 1, 0, "");
-        item2.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        item2.setIcon(R.drawable.actionbar_button_write);
-        
-        
+        if(isMainFrame) {
+        	MenuItem item2 = menu.add(0, 1, 0, "");
+            item2.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+            item2.setIcon(R.drawable.actionbar_button_write);
+        }
         
        
         return true;
@@ -82,7 +98,10 @@ public class BaseActivity extends SlidingFragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
-			toggle();
+			if(isMainFrame)
+				toggle();
+			else
+				finish();
 			return true;
 		case 1:
 			return true;

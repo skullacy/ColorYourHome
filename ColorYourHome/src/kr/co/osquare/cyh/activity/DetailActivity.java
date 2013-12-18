@@ -1,6 +1,8 @@
 package kr.co.osquare.cyh.activity;
 
 import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import com.androidhive.imagefromurl.ImageLoader;
 
 
@@ -30,9 +32,18 @@ import android.widget.Toast;
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 @SuppressLint("NewApi")
-public class DetailActivity extends Activity {
+public class DetailActivity extends BaseActivity {
+	
+	private static DetailActivity _instance;
+	public static DetailActivity getInstance() {
+		return _instance;
+	}
+	
+	public DetailActivity() {
+		super(R.string.viewpager, false);
+		_instance = this;
+	}
 
-	/** Called when the activity is first created. */
 	@SuppressLint("NewApi")
 	public SlidingDrawer drawer;
 	
@@ -43,14 +54,6 @@ public class DetailActivity extends Activity {
 	    setContentView(R.layout.detail_activity);
 	    // TODO Auto-generated method stub
 	    
-	   android.app.ActionBar actionBar = getActionBar();
-	   actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
-	   actionBar.setIcon(getResources().getDrawable(R.drawable.actionbar_button_menu));
-	   View v = getLayoutInflater().inflate(R.layout.actionbar_header, null);
-	   actionBar.setHomeButtonEnabled(true);
-	   actionBar.setCustomView(v, new android.app.ActionBar.LayoutParams(android.app.ActionBar.LayoutParams.MATCH_PARENT,android.app.ActionBar.LayoutParams.MATCH_PARENT));
-	   actionBar.setDisplayShowCustomEnabled(true);
-	   
 	   ImageView image = (ImageView)findViewById(R.id.detail_image);
 	   Log.e("DetailActivity", image.toString());
 	   Intent i = getIntent();
@@ -97,5 +100,17 @@ public class DetailActivity extends Activity {
 	  
 	   
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+    	MenuItem item2 = menu.add(0, 1, 0, "");
+        item2.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        item2.setIcon(R.drawable.actionbar_button_blank);
+        
+       
+        return true;
+	}
+	
 
 }
