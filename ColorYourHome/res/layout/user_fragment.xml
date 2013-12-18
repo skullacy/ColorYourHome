@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:padding="0dp" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+             >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/useruser" 
+                android:layout_margin="0dp"
+    			android:padding="0dp"/>
+                <LinearLayout 
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:orientation="horizontal"
+		            android:layout_gravity="center_horizontal"
+		            android:layout_marginTop="10dp"
+		            >
+		            <ImageButton 
+		                android:id="@+id/uploadedbtn"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:src="@drawable/uploadedbtn"
+		                android:layout_margin="0dp"
+    					android:padding="0dp"
+    					
+		                />
+		              <ImageButton 
+		                android:id="@+id/mydrawer"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:src="@drawable/mydrawer"
+		                android:layout_margin="0dp"
+    					android:padding="0dp"
+		                />
+		                <ImageButton 
+		                android:id="@+id/mylike"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:src="@drawable/mylike"
+		                android:layout_margin="0dp"
+    					android:padding="0dp"
+		                />
+		           
+		        </LinearLayout>
+		        <FrameLayout 
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content">
+		            <LinearLayout 
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:orientation="vertical">
+		               
+		                 <ImageView
+			                android:layout_width="match_parent"
+			                android:layout_height="wrap_content"
+			                android:src="@drawable/personal_contents" 
+			                android:layout_margin="0dp"
+			    			android:padding="0dp"/>
+		            </LinearLayout>
+		        </FrameLayout>
+        </LinearLayout>
+    
+
+    </ScrollView>
+
+</RelativeLayout>

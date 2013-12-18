@@ -33,6 +33,8 @@
         <activity
             android:name="kr.co.osquare.cyh.activity.MainFrameActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.DetailActivity"></activity>
+        <activity android:name="UserFragment"></activity>
     </application>
 
 </manifest>

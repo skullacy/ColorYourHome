@@ -33,6 +33,7 @@ public class MenuObjectsFragment extends ListFragment {
 		CategoryManager category = CategoryManager.getInstance();
 		adapter = new MenuObjectAdapter(getActivity());
 		
+		adapter.add(new MenuObject("이연희",R.drawable.userimg, 0));
 		adapter.add(new MenuObject("홈", R.drawable.slide_left_home_icon, 1));
 		
 		MenuObject categories = new MenuObject("카테고리", R.drawable.slide_left_category_icon, 3);
@@ -62,6 +63,9 @@ public class MenuObjectsFragment extends ListFragment {
 		else {
 			if (o.getId() < 100) {
 				switch(o.getId()) {
+				case 0:
+					frame.fragmentReplace(4);
+					break;
 				case 1:
 					frame.fragmentReplace(0);
 					break;

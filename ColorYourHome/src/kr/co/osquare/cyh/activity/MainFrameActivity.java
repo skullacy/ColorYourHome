@@ -8,6 +8,7 @@ import kr.co.osquare.cyh.TwoFragment;
 import kr.co.osquare.cyh.R.id;
 import kr.co.osquare.cyh.R.layout;
 import kr.co.osquare.cyh.R.string;
+import kr.co.osquare.cyh.UserFragment;
 import kr.co.osquare.cyh.fragment.CategoryPostsFragment;
 import kr.co.osquare.cyh.fragment.PostsFragment;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class MainFrameActivity extends BaseActivity {
 	public final static int FRAGMENT_TWO = 1;
 	public final static int FRAGMENT_THREE = 2;
 	public final static int FRAGMENT_FOUR = 3;
+	public final static int FRAGMENT_USER = 4;
 
 	public MainFrameActivity() {
 		super(R.string.viewpager);
@@ -70,6 +72,9 @@ public class MainFrameActivity extends BaseActivity {
 		Fragment newFragment = null;
 
 		switch (idx) {
+		case FRAGMENT_USER:
+			newFragment = new UserFragment();
+			break;
 		case FRAGMENT_ONE:
 			newFragment = new PostsFragment();
 			break;

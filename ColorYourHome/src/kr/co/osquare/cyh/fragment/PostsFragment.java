@@ -1,13 +1,17 @@
 package kr.co.osquare.cyh.fragment;
 
 import kr.co.osquare.cyh.R;
+import kr.co.osquare.cyh.activity.DetailActivity;
 import kr.co.osquare.cyh.adapter.ImagePostAdapter;
+import kr.co.osquare.cyh.model.ImagePost;
+import kr.co.osquare.cyh.model.ImagePostToTransfer;
 import kr.co.osquare.cyh.model.MenuObject;
 import kr.co.osquare.cyh.remote.PostManager;
 import kr.co.osquare.cyh.remote.PostManager.OnPostLoadListener;
 
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -116,6 +120,21 @@ public class PostsFragment extends SherlockFragment implements
 	public void onItemClick(AdapterView<?> arg0, View v, int position, long id) {
 		Log.e("onItemClick", "ItemClick");
 //		MenuObject o = (MenuObject) arg0.getItemAtPosition(position);
+		Intent intent = new Intent(getActivity(), DetailActivity.class);
+		System.out.println(position);
+		System.out.println(id);
+		System.out.println(arg0);
+				
+		ImagePost imgdata = (ImagePost) arg0.getItemAtPosition(position);
+		ImagePostToTransfer.setImagePost(imgdata);
+		
+		intent.putExtra("id", id);
+		intent.putExtra("position", position);
+		
+		
+		startActivity(intent);
+		
+		
 		
 
 	}
@@ -131,3 +150,4 @@ public class PostsFragment extends SherlockFragment implements
 
 	}
 }
+
